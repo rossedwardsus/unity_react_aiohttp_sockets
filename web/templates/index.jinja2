@@ -2,37 +2,58 @@
 {% include "components/nav.jinja2" %}
 {% block content %}
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <h4>Server Ticks</h4>
-    <div class="tick-view">
-      <span id="clock"> </span>
-    </div>
-  </div>
+<html>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+      $("#createProject").click(function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<input>Project Title</input>(required)<br/><button id=\"btnCreateProject\">Create</button>");
+
+      });
+
+      $(document).on('click','#btnCreateProject', function(){
+
+        $("#body").html("<input>Project Lead</input><br/><input>Colaborators</input></br><br/><input>Collaborators</input><br/><input>Date of Exhibition</input><br/><input>Category</input><br/><br/><input>Venue</input><br/><br/><input>Acknolwedgements</input><br/><input>Notes</input><br/><button id=\"btnAddAssets\">Add Assets</button>");
+
+      });
+
+      $(document).on('click',"#btnAddAssets", function(){
+        //$(this).hide();
+      
+          console.log("ok");
+          $("#body").html("<input>Gifs</input><br/><input>Obj</input><br/><input>Movies</input><br/><button>Next</button>");
+
+      });
+
+
+  });
+
+</script>
+
+<div id="left_sidebar">
+  <a id="createProject">Create Project</a>
+  <br/>
+  <a id="createProject">Nvite collaboratiors</a>
+  <br/>
+  Load project
+  <br/>
+  Load asset
+  <br/>
+
 </div>
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-md-5">
-      <h3> What is this???? </h3>
-      {{ content['what_is_this'] }}
-    </div>
-
-    <div class="col-md-7">
-      <h3> Where do I go from here? </h3>
-      <div class="alert alert-info text-center" role="alert">
-          {{ content['alert_guide'] }}
-      </div>
-      {{ content['where_next'] }}
-    </div>
-
-    <div class="col-md-12">
-      <h3> Helpful Links </h3>
-      {{ content['helpful_links'] }}
-    </div>
-
-  </div> <!-- row -->
+<br/>
+<br/>
+<div id="body">
 </div>
+</html>
+
+
 
 {% endblock %}
