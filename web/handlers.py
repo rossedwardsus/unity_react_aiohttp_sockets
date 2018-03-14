@@ -31,7 +31,7 @@ async def index(request):
 
 async def create_project(request):
 
-    return {
+    return web.json_response({
         'title': 'Heroku aiohttp Web Template',
         'gh_repo_url': 'https://github.com/sseg/heroku-aiohttp-web',
         'bootstrap_css_url': '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
@@ -43,7 +43,7 @@ async def create_project(request):
             'alert_guide': get_content('index', 'alert_guide'),
             'helpful_links': get_content('index', 'helpful_links'),
         }
-    }
+    })
 
 
 async def tick(request):
