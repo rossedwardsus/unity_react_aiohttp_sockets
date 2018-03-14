@@ -38,6 +38,17 @@
 <script type="text/javascript">
 
   $(document).ready(function(){
+
+      $("#body").html("<input>Email</input><br/><input>Password</input></br><button id=\"btnLogin\">Login</button>");
+
+
+      $(document).on('click','#btnLogin', function(){
+
+        $("#body").html("<div class=\"row\"><div class=\"col-md-4\">1<div class=\"col-md-4\">2<div class=\"col-md-4\">3</div>");
+
+      });
+
+
       $("#createProject").click(function(){
         //$(this).hide();
       
