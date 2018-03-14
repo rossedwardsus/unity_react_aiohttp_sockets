@@ -17,5 +17,5 @@ def configure_handlers(app, routing_map, prefix=None):
     for routing in routing_map:
         path = prefix + routing.path if prefix is not None else routing.path
         app.router.add_route(routing.method, path, routing.handler, name=routing.name)
-        app.router.add_static('/static/', path=str(os.getcwd() + '/static/'), name="static")
+        #app.router.add_static('/static/', path=str(os.getcwd() + '/static/'), name="static")
 
