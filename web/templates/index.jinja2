@@ -44,7 +44,23 @@
       });
 
 
-      $("#createProject").click(function(){
+      $(document).on('click', "#createProject", function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<input>Project Title</input>(required)<br/><button id=\"btnCreateProject\">Create</button>");
+
+      });
+
+      $(document).on('click', "#loadProjects", function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<input>Project Title</input>(required)<br/><button id=\"btnCreateProject\">Create</button>");
+
+      });
+
+      $(document).on('click', "#loadProject", function(){
         //$(this).hide();
       
           //console.log("ok");
