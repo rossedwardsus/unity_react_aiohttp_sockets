@@ -1,4 +1,4 @@
-from aiohttp.web import StreamResponse, HTTPNotAcceptable
+from aiohttp.web import StreamResponse, HTTPNotAcceptable, BaseRequest
 import aiohttp_jinja2
 import asyncio
 import io
