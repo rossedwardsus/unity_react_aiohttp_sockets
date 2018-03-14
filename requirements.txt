@@ -15,3 +15,4 @@ markdown==2.6.6
 MarkupSafe==0.23          # via jinja2
 multidict==2.1.0          # via aiohttp
 python-dotenv==0.6.0
+aiopg

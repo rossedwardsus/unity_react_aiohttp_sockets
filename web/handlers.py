@@ -5,6 +5,7 @@ import io
 import json
 import logging
 import time
+import aiopg
 
 from web.templates.content import get_content
 
