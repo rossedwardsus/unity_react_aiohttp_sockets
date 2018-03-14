@@ -7,7 +7,7 @@ Route = namedtuple('Route', ['name', 'method', 'path', 'handler'])
 
 routes = [
     Route('index', 'GET', '/', index),
-    Route('tick', 'GET', '/tick', tick)
+    Route('tick', 'GET', '/tick', tick),
     Route('create', 'POST', '/project', create_project)
 ]
 
