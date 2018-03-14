@@ -1,4 +1,4 @@
-from aiohttp.web import StreamResponse, HTTPNotAcceptable, BaseRequest
+from aiohttp.web import StreamResponse, HTTPNotAcceptable, json_response
 import aiohttp_jinja2
 import asyncio
 import io
@@ -31,7 +31,7 @@ async def index(request):
 
 async def create_project(request):
 
-    return web.json_response({
+    return json_response({
         'title': 'Heroku aiohttp Web Template',
         'gh_repo_url': 'https://github.com/sseg/heroku-aiohttp-web',
         'bootstrap_css_url': '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
