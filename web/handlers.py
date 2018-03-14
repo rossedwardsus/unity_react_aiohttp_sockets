@@ -29,6 +29,23 @@ async def index(request):
     }
 
 
+async def create_project(request):
+
+    return {
+        'title': 'Heroku aiohttp Web Template',
+        'gh_repo_url': 'https://github.com/sseg/heroku-aiohttp-web',
+        'bootstrap_css_url': '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
+        'bootstrap_js_url': '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
+        'jquery_url': '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+        'content': {
+            'what_is_this': get_content('index', 'what_is_this'),
+            'where_next': get_content('index', 'where_next'),
+            'alert_guide': get_content('index', 'alert_guide'),
+            'helpful_links': get_content('index', 'helpful_links'),
+        }
+    }
+
+
 async def tick(request):
     if 'text/event-stream' not in request.headers.getall('ACCEPT', []):
         raise HTTPNotAcceptable(reason="'text/event-stream' not found in Accept headers.")

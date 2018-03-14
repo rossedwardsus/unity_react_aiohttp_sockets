@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from web.handlers import index, tick
+from web.handlers import index, tick, create_project
 
 
 Route = namedtuple('Route', ['name', 'method', 'path', 'handler'])
@@ -8,6 +8,7 @@ Route = namedtuple('Route', ['name', 'method', 'path', 'handler'])
 routes = [
     Route('index', 'GET', '/', index),
     Route('tick', 'GET', '/tick', tick)
+    Route('create', 'POST', '/project', create_project)
 ]
 
 
