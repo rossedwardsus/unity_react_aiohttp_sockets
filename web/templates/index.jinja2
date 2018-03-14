@@ -21,6 +21,16 @@
 
       $(document).on('click','#btnCreateProject', function(){
 
+        $.ajax({
+          type: "POST",
+          url: "someaction.do?action=saveData",
+          data: myDataVar.toString(),
+          dataType: "text",
+          success: function(resultData){
+              alert("Save Complete");
+          }
+        });
+
         $("#body").html("<input>Project Lead</input><br/><input>Colaborators</input></br><br/><input>Collaborators</input><br/><input>Date of Exhibition</input><br/><input>Category</input><br/><br/><input>Venue</input><br/><br/><input>Acknolwedgements</input><br/><input>Notes</input><br/><button id=\"btnAddAssets\">Add Assets</button>");
 
       });
@@ -60,7 +70,7 @@
     <div id="body">
 </div>
 </div>
-  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4"></div>
 </div>
 
 
