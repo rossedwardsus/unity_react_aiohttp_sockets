@@ -13,11 +13,6 @@
 <div class="row">
   <div class="col-md-4">
       <div id="left_sidebar">
-      Projects
-      <br/>
-      <a id="createProject">Create</a>
-      <br/>
-      <br/>
       Project1
       <br/>
       <a id="createProject">Meta</a>
@@ -44,7 +39,7 @@
 
       $(document).on('click','#btnLogin', function(){
 
-        $("#body").html("<div class=\"row\"><div class=\"col-md-4\">1</div><div class=\"col-md-4\">2</div><div class=\"col-md-4\">3</div>");
+        $("#body").html("<div class=\"row\"><div id=\"createProject\" class=\"col-md-4\">Create Project</div><div id=\"loadProjects\" class=\"col-md-4\">Load Projects</div><div class=\"col-md-4\">3</div>");
 
       });
 
