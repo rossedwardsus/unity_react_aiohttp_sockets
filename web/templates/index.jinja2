@@ -6,8 +6,9 @@
 <html>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
 
 
 <div class="row">
@@ -19,13 +20,42 @@
   </div>
   <div class="col-md-4">
     <div id="body">
+    <br/>
+    <br/>
+    <div id="body1">
 </div>
 </div>
   <div class="col-md-4"></div>
 </div>
 
+<script type="text/babel">
+
+    class Greetings extends React.Component{
+
+        componentDidMount(){
+
+            alert();
+
+        }
+
+
+        render(){
+          return (
+            <h1>Greetings, {this.props.name}!</h1>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Greetings name="Chris" />,
+        document.getElementById('body1')
+      );
+
+</script>
+
 <script type="text/javascript">
 
+  
   $(document).ready(function(){
 
       $("#body").html("<input>Email</input><br/><input>Password</input></br><button id=\"btnLogin\">Login</button>");
