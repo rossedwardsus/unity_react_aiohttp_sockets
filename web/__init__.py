@@ -42,7 +42,7 @@ def build_app(settings_path, loop=None):
     if settings['assets']['use_proxy']:
         application.assets = AssetManager(application, prefix=settings['assets']['base_path'])
     else:
-        static_dir = os.path.join(os.path.dirname(here_folder), 'public')
+        static_dir = os.path.join(os.path.dirname(here_folder), 'static')
         application.assets = AssetManager(
             application,
             prefix=settings['assets']['base_path'],
