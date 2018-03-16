@@ -1,4 +1,5 @@
-from aiohttp.web import StreamResponse, HTTPNotAcceptable, json_response
+from aiohttp import web
+from aiohttp.web import StreamResponse, HTTPNotAcceptable, json_response, Response
 import aiohttp_jinja2
 import asyncio
 import io
@@ -28,6 +29,13 @@ async def index(request):
             'helpful_links': get_content('index', 'helpful_links'),
         }
     }
+async def index1(request):
+    import os
+    cwd = os.getcwd()
+    print("hello" + cwd)
+    with open('./web/templates/index.html') as f:
+        return Response(text=f.read(), content_type='text/html')
+    #return json_response({})
 
 
 async def create_project(request):

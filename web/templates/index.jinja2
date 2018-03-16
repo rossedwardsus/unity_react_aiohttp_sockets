@@ -3,62 +3,319 @@
 {% include "components/nav.jinja2" %}
 {% block content %}
 
+ {% raw %}
+
 <html>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
-
+    <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
 
 <div class="row">
   <div class="col-md-4">
-      <div id="left_sidebar">
-      
-      <br/>
-</div>
-  </div>
-  <div class="col-md-4">
     <div id="body">
-    <br/>
-    <br/>
-    <div id="body1">
-</div>
-</div>
-  <div class="col-md-4"></div>
 </div>
 
 <script type="text/babel">
 
+    const Router = window.ReactRouterDOM.BrowserRouter;
+    const Route =  window.ReactRouterDOM.Route;
+    const Link =  window.ReactRouterDOM.Link;
+    const Prompt =  window.ReactRouterDOM.Prompt;
+    const Switch = window.ReactRouterDOM.Switch;
+    const Redirect = window.ReactRouterDOM.Redirect;
+    const IndexRoute = ReactRouter.IndexRoute;
+    const hashHistory = ReactRouter.hashHistory;
+
     class Greetings extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
 
         componentDidMount(){
 
             //alert();
+            
 
         }
 
-
         render(){
+
+          let page = null;
+
+          if(this.state.page === "home"){
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 20}}><Link to="/register">Create Project</Link></div>
+                      <div id="loadProjects" className="col" style={{fontSize: 20}}>Load Projects</div>
+                    </div>
+
+          }else{
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 10}}>Create Project</div>
+                      <div id="loadProjects" className="col" style={{fontSize: 10}}>Load Projects</div>
+                  </div>
+
+          }
+
+
           return (
-            <h1>Greetings, {this.props.name}!</h1>
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
           );
         }
       }
 
-      ReactDOM.render(
-        <Greetings name="Chris" />,
-        document.getElementById('body1')
-      );
+      class Register extends React.Component{
 
-</script>
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        render(){
+
+          let page = null;
+
+          if(this.state.page === "home"){
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 20}}>Username</div>
+                      <div id="loadProjects" className="col" style={{fontSize: 20}}>Load Projects</div>
+                    </div>
+
+          }else{
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 10}}>Create Project</div>
+                      <div id="loadProjects" className="col" style={{fontSize: 10}}>Load Projects</div>
+                  </div>
+
+          }
+
+
+          return (
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
+          );
+        }
+      }
+
+      class Login extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        render(){
+
+          let page = null;
+
+          if(this.state.page === "home"){
+
+            page = <div className="row">
+                      <div className="col" style={{fontSize: 20}}>Username</div>
+                      <br/>
+                      <div className="col" style={{fontSize: 20}}>Password</div>
+                      <br/>
+                      <Link to="/home">Login</Link>
+                    </div>
+
+          }else{
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 10}}>Create Project</div>
+                      <div id="loadProjects" className="col" style={{fontSize: 10}}>Load Projects</div>
+                  </div>
+
+          }
+
+
+          return (
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
+          );
+        }
+      }
+
+      class Home extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        render(){
+
+          let page = null;
+
+          
+
+            page = <div className="row">
+                      <div className="col" style={{fontSize: 10}}><Link to="/create/project">Create Project</Link></div>
+                      <div id="loadProjects" className="col" style={{fontSize: 10}}>Load Projects</div>
+                  </div>
+
+
+          return (
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
+          );
+        }
+      }
+
+
+      class CreateProject extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        render(){
+
+          let page = null;
+
+          
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 10}}>Project Title</div>
+                      <Link to="/project/details">Create</Link>
+                  </div>
+
+
+          return (
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
+          );
+        }
+      }
+
+      class ProjectDetails extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {page: "home"};
+
+        }
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        render(){
+
+          let page = null;
+
+          
+
+            page = <div className="row">
+                      <div id="createProject" className="col" style={{fontSize: 10}}>Project Details</div>
+                      <Link to="/project/details">Create</Link>
+                  </div>
+
+
+          return (
+            <h1>
+              <div className="container">
+                  {page}
+              </div>
+            </h1>
+          );
+        }
+      }
+
+
+
+      //ReactDOM.render(
+      //  <Greetings name="Chris" />,
+      //  document.getElementById('body')
+      //);
+
+      ReactDOM.render((
+        <Router history={hashHistory}>
+            <div>
+            <Route exact path="/" component={Login}>
+            </Route>
+            <Route path="/home" component={Home} />
+            <Route path="/create/project" component={CreateProject} />
+            <Route path="/project/details" component={ProjectDetails} />
+          </div>
+        </Router>
+      ), document.getElementById("body"));
+
+      </script>
 
 <script type="text/javascript">
 
   
   $(document).ready(function(){
 
-      $("#body").html("<input>Email</input><br/><input>Password</input></br><button id=\"btnLogin\">Login</button>");
+      //$("#body").html("<input>Email</input><br/><input>Password</input></br><button id=\"btnLogin\">Login</button>");
 
 
       $(document).on('click','#btnLogin', function(){
@@ -126,4 +383,8 @@
 
 </html>
 
+ {% endraw %}
+
 {% endblock %}
+
+

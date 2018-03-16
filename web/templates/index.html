@@ -1,0 +1,138 @@
+<html>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div id="body">
+</div>
+
+<script type="text/babel">
+
+    class Greetings extends React.Component{
+
+        constructor() {
+            super();
+
+            this.state = {};
+
+        }
+
+
+        componentDidMount(){
+
+            //alert();
+            
+
+        }
+
+        
+
+
+        render(){
+
+          let login = <div class="row">
+                    <div id="createProject" className="col-md-4">Create Project</div>
+                    <div id="loadProjects" className="col-md-4">Load Projects</div>
+                  </div>
+
+          return (
+            <h1>
+              <div className="container">
+
+                <div className="row">
+                    <div id="createProject" className="col" style={{fontSize: 20}}>Create Project1</div>
+                    <div id="loadProjects" className="col" style={{fontSize: 20}}>Load Projects</div>
+                  
+                </div>
+
+              </div>
+            </h1>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Greetings name="Chris" />,
+        document.getElementById('body')
+      );
+
+</script>
+
+<script type="text/javascript">
+
+  
+  $(document).ready(function(){
+
+      //$("#body").html("<input>Email</input><br/><input>Password</input></br><button id=\"btnLogin\">Login</button>");
+
+
+      $(document).on('click','#btnLogin', function(){
+
+        $("#body").html("<div class=\"row\"><div id=\"createProject\" class=\"col-md-4\">Create Project</div><div id=\"loadProjects\" class=\"col-md-4\">Load Projects</div><div class=\"col-md-4\">3</div></row>");
+
+      });
+
+
+      $(document).on('click', "#createProject", function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<input>Project Title</input>(required)<br/><button id=\"btnCreateProject\">Create</button>");
+
+      });
+
+      $(document).on('click', "#loadProjects", function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<div id=\"loadProject\">Project1</div>");
+
+      });
+
+      $(document).on('click', "#loadProject", function(){
+        //$(this).hide();
+      
+          //console.log("ok");
+          $("#body").html("<u>Project1</u><br/><br/><div class=\"row\"><div id=\"createProject\" class=\"col-md-4\">Meta</div><div id=\"loadProjects\" class=\"col-md-4\">Assets</div><div class=\"col-md-4\">Collaborators</div></row>");
+      });
+
+      $(document).on('click','#btnCreateProject', function(){
+
+        $.ajax({
+          type: "POST",
+          url: "/create",
+          //data: myDataVar.toString(),
+          dataType: "text",
+          success: function(resultData){
+              console.log(JSON.stringify(resultData));
+          }
+        });
+
+        $("#body").html("<input>Project Lead</input><br/><input>Colaborators</input></br><br/><input>Collaborators</input><br/><input>Date of Exhibition</input><br/><input>Category</input><br/><br/><input>Venue</input><br/><br/><input>Acknolwedgements</input><br/><input>Notes</input><br/><button id=\"btnAddAssets\">Add Assets</button>");
+
+      });
+
+      $(document).on('click',"#btnAddAssets", function(){
+        //$(this).hide();
+      
+          console.log("ok");
+          $("#body").html("<input>Gifs</input><br/><input>Obj</input><br/><input>Movies</input><br/><button>Next</button>");
+
+      });
+
+
+  });
+
+</script>
+
+
+<br/>
+<br/>
+
+</html>
