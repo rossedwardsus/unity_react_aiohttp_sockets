@@ -40,6 +40,10 @@ async def index1(request):
 
 async def create_project(request):
 
+    post = await request.post()
+
+    print(str(post["myField"]))
+
     return json_response({
         'title': 'Heroku aiohttp Web Template'
     })

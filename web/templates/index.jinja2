@@ -8,12 +8,7 @@
 <html>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/react@15/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
-    <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
-    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
-
+    
 <div class="row">
   <div class="col-md-4">
     <div id="body">
@@ -21,7 +16,7 @@
 
 <script type="text/babel">
 
-    const Router = window.ReactRouterDOM.BrowserRouter;
+    /*const Router = window.ReactRouterDOM.BrowserRouter;
     const Route =  window.ReactRouterDOM.Route;
     const Link =  window.ReactRouterDOM.Link;
     const Prompt =  window.ReactRouterDOM.Prompt;
@@ -233,18 +228,16 @@
 
           let page = null;
 
-          
-
-            page = <div className="row">
-                      <div id="createProject" className="col" style={{fontSize: 10}}>Project Title</div>
-                      <Link to="/project/details">Create</Link>
-                  </div>
+        
 
 
           return (
             <h1>
               <div className="container">
-                  {page}
+                  <div className="row">
+                      <div className="col" style={{fontSize: 10}}>Project Title</div>
+                      <Link to="/project/details">Create</Link>
+                  </div>
               </div>
             </h1>
           );
@@ -323,9 +316,11 @@
             <Route path="/project/details" component={ProjectDetails} />
           </div>
         </Router>
-      ), document.getElementById("body"));
+      ), document.getElementById("body"));*/
 
       </script>
+
+<script type="text/javascript" src="/static/js/build.js"></script>
 
 <script type="text/javascript">
 
